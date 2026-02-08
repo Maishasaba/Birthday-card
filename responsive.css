@@ -1,0 +1,86 @@
+@media only screen and (max-width: 600px) {
+    /* Heart Section Adjustments */
+.heart-section {
+    padding: 20px;
+  }
+  
+  .heart {
+    width: 90px;
+    height: 80px;
+  }
+  .heart-shape {
+    width: 110px;
+    height: 91px;
+  }
+
+  .heart-shape::before{
+    width: 90px;
+    height: 94px;
+  }
+  .heart-shape::after {
+    width: 92px;
+    height: 91px;
+  }
+  
+  .heart-message {
+    font-size: 0.9rem;
+  }
+  .bubu-dudu img {
+    top: -165px;
+    left: 98px;
+    height: 225px;
+}
+/* Modal Card Adjustments */
+.modal-card {
+    position: relative;
+    height: 100vh;
+    width: 100%; /* takes most of the screen width on mobile */
+    max-width: 360px; /* optional cap for tablets */
+    height: 80vh; /* responsive height, fills most of screen */
+    display: flex;
+    flex-direction: column;
+    overflow: hidden;
+  }
+  
+  /* Modal Images */
+  .modal-images {
+    flex: 1;
+    width: 100%;
+    height: 100%;
+    min-height: 250px;
+    position: relative;
+  }
+  
+  .modal-image {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+  .modal-message {
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    background: rgba(255, 255, 255, 0.85);
+    padding: 15px;
+    opacity: 0;
+    transform: translateY(10px);
+    transition: all 1s ease;
+    z-index: 2;
+  }
+
+  .modal-message h2{
+    font-size: 22px;
+  }
+  .modal-message p{
+    font-size: 14px;
+  }
+  
+  .close-modal {
+    width: 28px;
+    height: 28px;
+    font-size: 14px;
+  }
+
+}      
+  

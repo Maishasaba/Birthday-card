@@ -1,0 +1,211 @@
+/* Reset (optional but recommended) */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+  /* =========================
+   Color Variables
+========================= */
+:root {
+    --bg-gradient-start: #ff9a9e;
+    --bg-gradient-end: #fad0c4;
+    --heart-main: #ff4b5c;
+    --text-primary: #ffffff;
+    --modal-message:#261459;
+    --font-heading: 'Playfair Display', serif;
+    --font-body: 'Poppins', sans-serif;
+  }
+  body {
+  font-family: var(--font-body);
+}
+
+  h1,h2 {
+  font-family: var(--font-heading);
+  font-weight: 600;
+}
+  
+  /* Heart Section */
+  .heart-section {
+    height: 100vh;
+    background: linear-gradient(135deg, #ff9a9e, #fad0c4);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  
+  /* Container */
+  .container {
+    text-align: center;
+  }
+  
+/* Heart container (no rotation) */
+.heart {
+    width: 120px;
+    height: 110px;
+    margin: 0 auto;
+    cursor: pointer;
+    animation: pulse 1.5s infinite;
+  }
+  
+  /* Actual heart shape */
+  .heart-shape {
+    position: relative;
+    width: 120px;
+    height: 110px;
+    background: var(--heart-main);
+    transform: rotate(-45deg);
+  }
+  
+  /* Left circle */
+  .heart-shape::before {
+    content: "";
+    position: absolute;
+    width: 112px;
+    height: 110px;
+    background: var(--heart-main);
+    border-radius: 50%;
+    top: -55px;
+    left: 0;
+  }
+  
+  /* Right circle */
+  .heart-shape::after {
+    content: "";
+    position: absolute;
+    width: 116px;
+    height: 110px;
+    background: var(--heart-main);
+    border-radius: 50%;
+    left: 55px;
+    top: 0;
+  }
+  
+  /* Message */
+  .heart-message {
+    margin-top: 50px;
+    font-size: 26px;
+    color: #ffffff;
+  }
+
+  .bubu-dudu{
+    position: relative;
+    cursor: pointer;
+  } 
+  .bubu-dudu img {
+    position: absolute;
+    top: -208px;
+    left: 201px;
+    height: 270px;
+}
+
+/* =========================
+   MODAL STYLES
+========================= */
+
+.modal-section {
+    position: fixed;
+    inset: 0;
+    display: none;
+    z-index: 1000;
+  }
+  
+  .modal-section.active {
+    display: block;
+  }
+  
+  .modal-overlay {
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.6);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  
+  .modal-card {
+    background: #ffffff;
+    width: 340px;
+    border-radius: 16px;
+    padding: 20px;
+    text-align: center;
+    box-shadow: 0 20px 40px rgba(0,0,0,0.2);
+    animation: modalFade 0.4s ease;
+  }
+  
+  /* Images */
+  .modal-images {
+    position: relative;
+    flex: 1;
+    width: 100%;
+    height: 340px; 
+    overflow: hidden;
+    border-radius: 12px;
+  }
+  
+  .modal-image {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    opacity: 0;
+    transition: opacity 1s ease;
+  }
+  
+  .modal-image.active {
+    opacity: 1;
+  }
+  
+  /* Message */
+  .modal-message {
+    margin-top: 20px;
+    opacity: 0;
+    transform: translateY(10px);
+    transition: all 1s ease;
+  }
+  
+  .modal-message.show {
+    opacity: 1;
+    transform: translateY(0);
+  }
+  
+  .modal-message h2 {
+    font-family: var(--font-heading);
+    color: var(--heart-main);
+    font-weight: 700;
+    margin-bottom: 10px;
+  }
+  
+  .modal-message p {
+    font-family: var(--font-body);
+    font-size: 15px;
+    color: var(--modal-message);
+  }
+  
+  /* Animations */
+  @keyframes modalFade {
+    from {
+      opacity: 0;
+      transform: scale(0.9);
+    }
+    to {
+      opacity: 1;
+      transform: scale(1);
+    }
+  }
+  
+  
+  /* Pulse Animation */
+  @keyframes pulse {
+    0% {
+      transform: scale(1);
+    }
+    50% {
+      transform: scale(1.08);
+    }
+    100% {
+      transform: scale(1);
+    }
+  }
+  
